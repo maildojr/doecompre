@@ -86,14 +86,14 @@ $qtd_total = $row['quant'];
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Doe&Compre</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!--<meta http-equiv="refresh" content="30">-->
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
@@ -101,7 +101,7 @@ $qtd_total = $row['quant'];
         <nav class="teal lighten-1" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="./" class="brand-logo">
-                    <img src="logo.png" width="50px" height="50px">
+                    <img src="../img/logo.png" width="50px" height="50px">
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="./"><i class="material-icons">local_grocery_store</i></a></li>
@@ -136,7 +136,7 @@ $qtd_total = $row['quant'];
             <div class="container">
             <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-                <form class="col s12" method="post" action="configurar.php">
+                <form class="col s12" method="post" action="./configurar">
                 <div class='row'>
                     <div class='col s12'>
                     </div>
@@ -299,7 +299,7 @@ $qtd_total = $row['quant'];
             <div id="modalproduto" class="modal">
                 <div class="modal-content">
                     <h5>Cadastro Produto</h5>
-                    <form action="./configurar.php" method="POST" id="create_produto">
+                    <form action="./configurar" method="POST" id="create_produto">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="produto_name" name="produto_name" type="text" class="validate">
@@ -400,8 +400,8 @@ $qtd_total = $row['quant'];
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
     
     <!-- Initialization Components -->
     <script>

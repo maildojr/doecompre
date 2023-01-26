@@ -2,45 +2,6 @@
 include('session.php');
 header("Content-type: text/html; charset=utf-8");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    if (isset($_POST['reserva_name'])) {
-        $_SESSION['reserva_name'] = mysqli_real_escape_string($db, $_POST['reserva_name']);
-        $set_name = 1;
-    } else {
-        $set_name = 0;
-    }
-}
-
-if (!empty($_GET["id"]) and isset($_SESSION['reserva_name'])) {
-    $id_produto = $_GET["id"];
-
-    if (is_numeric($id_produto) == true) {
-
-        //Check availiable
-        $ses_sql = mysqli_query($db, "SELECT id, produto, reserva FROM doecompre WHERE id = '" . $id_produto . "'");
-        $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
-        $reserva = $row['reserva'];
-
-        if ($reserva == '-') {
-            $sql_update = "UPDATE doecompre SET reserva = '" . $_SESSION['reserva_name'] . "' WHERE id = " . $id_produto . ";";
-            mysqli_query($db, $sql_update);
-            //echo $sql_update;
-            header("location: ./");
-        } else {
-            $msg_status = "Produto já reservado.";
-        }
-    } else {
-        header("location: ./");
-    }
-}
-
-//Valor Total
-$ses_sql = mysqli_query($db, "SELECT count(id) quant, REPLACE(sum(valor),'.',',') total FROM doecompre WHERE status = 1;");
-$row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
-$valor_total = $row['total'];
-$qtd_total = $row['quant'];
-
 ?>
 
 <!DOCTYPE html>
@@ -50,14 +11,14 @@ $qtd_total = $row['quant'];
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Doe&Compre</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!--<meta http-equiv="refresh" content="30">-->
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
@@ -65,7 +26,7 @@ $qtd_total = $row['quant'];
         <nav class="teal lighten-1" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="./" class="brand-logo">
-                    <img src="logo.png" width="50px" height="50px">
+                    <img src="../img/logo.png" width="50px" height="50px">
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#">Menu</a></li>
@@ -154,8 +115,8 @@ $qtd_total = $row['quant'];
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
 
 
 </body>

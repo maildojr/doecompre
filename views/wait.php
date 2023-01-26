@@ -15,13 +15,13 @@ if($active_app == 1){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Doe&Compre</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@ if($active_app == 1){
         <nav class="teal lighten-1" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="./" class="brand-logo">
-                    <img src="logo.png" width="50px" height="50px">
+                    <img src="../img/logo.png" width="50px" height="50px">
                 </a>
 
                 <ul class="right hide-on-med-and-down">
@@ -113,8 +113,8 @@ if($active_app == 1){
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
 
     <script>
         // SCRIPT DE COPY TO CLIPBOARD
