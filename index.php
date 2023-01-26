@@ -25,6 +25,10 @@ switch ($request) {
     
     
     //403 Forbidden
+    case '/files':
+        http_response_code(403);
+        require "views/403.php";
+        break;
     case '/ajax':
         http_response_code(403);
         require "views/403.php";
