@@ -5,7 +5,7 @@ $request = $_SERVER["REQUEST_URI"];
 
 switch ($request) {
     case '/':
-        require "home.php";
+        require "views/home.php";
         break;
     case '/configurar':
         require "views/configurar.php";
